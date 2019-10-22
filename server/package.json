@@ -1,0 +1,27 @@
+{
+  "name": "server-curriculo-natanael",
+  "version": "1.0.0",
+  "description": "Aplicacao Servidor do curriculo do Natanael",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npereirad/natanael-curriculo.git"
+  },
+  "keywords": [
+    "node",
+    "restify"
+  ],
+  "author": "Natanael Pereira da Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npereirad/natanael-curriculo/issues"
+  },
+  "homepage": "https://github.com/npereirad/natanael-curriculo#readme",
+  "dependencies": {
+    "config": "^3.2.3",
+    "restify": "^8.4.0"
+  }
+}
