@@ -1,8 +1,21 @@
-const restify = require("restify");
+const ProfileRoutes = require('./src/profile/profile.route');
 
-const server = restify.createServer();
+module.exports = class Server{    
+    constructor(){
 
-const routesProfile = require('./src/profile/profile.route');
-routesProfile(server);
+        const restify = require("restify");
+        this.server = restify.createServer();
+        new ProfileRoutes(this.server);
+    }
 
-module.exports = server;
+    listen(port){
+        this.server.listen(port, (error) =>{
+            if (error){
+                console.log(error);
+            }
+            else{
+                console.log(`Aplicacao iniciada na porta $(port)`);
+            }
+        });        
+    }
+}

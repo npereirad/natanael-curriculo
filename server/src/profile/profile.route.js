@@ -1,14 +1,23 @@
-const routes = (server) => {
+const ProfileController = require('./profile.controller');
 
-    server.get('/api/profile', (req, res, next) => {
-        try{
-            res.send('Teste Perfil');
-        }
-        catch(error){
+module.exports = class ProfileRoutes{    
 
-        }        
-        return next();
-    });
+    constructor(server){
+        this.server = server;
+        this.controller = new ProfileController()
+        this.initilize();        
+    }
+
+    initilize(){
+        this.server.get('/api/profile', (req, res, next) => {
+            try{                           
+                res.send(this.controller.get());
+            }
+            catch(error){
+                res.send(error);
+            }        
+            return next();
+        });
+    }
+
 }
-
-module.exports = routes;

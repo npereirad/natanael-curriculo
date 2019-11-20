@@ -1,13 +1,19 @@
 process.env['NODE_CONFIG_DIR'] = __dirname + '/config/';
+const Server = require('./server');
 
-const config = require('config');
-const server = require('./server');
-const port = config.get('port');
-server.listen(port, (error) =>{
-    if (error){
-        console.log(error);
+class App{
+    constructor(){
+        this.config = require('config');
+        this.server = new Server();
+        
     }
-    else{
-        console.log(`Aplicacao iniciada na porta $(port)`);
+    
+    start(){
+        const port = this.config.get('port');
+        this.server.listen(port);
     }
-});
+}
+
+
+const app = new App();
+app.start();
