@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/npereirad/natanael-curriculo#readme",
   "dependencies": {
-    "config": "^3.2.3",
+    "config": "^3.3.8",
     "restify": "^8.4.0"
   }
 }
